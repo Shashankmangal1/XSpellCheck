@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+XSpellCheck – Real-Time Spell Check & Auto-Correction (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+XSpellCheck is a React-based application that detects misspelled words in real-time using a custom dictionary.
+Whenever the user types text, the app identifies the first misspelled word and suggests the most appropriate correction.
 
-## Available Scripts
+This project was built as part of the Crio Frontend Buildout Series.
 
-In the project directory, you can run:
+📝 Features
 
-### `npm start`
+Real-time spell checking
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Case-insensitive word comparison
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Auto-suggestion for the first incorrect word only
 
-### `npm test`
+Supports entire sentences
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clears suggestion when input is empty
 
-### `npm run build`
+Uses a custom dictionary
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Functional component–based implementation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clean and simple UI matching Crio guidelines
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+📚 Custom Dictionary Used
+const customDictionary = {
+  teh: "the",
+  wrok: "work",
+  fot: "for",
+  exampl: "example"
+};
 
-### `npm run eject`
+📸 Screenshots
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+(Add screenshots once your UI is ready)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Initial UI
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Misspelling detected (e.g., "wrok")
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Multiple misspellings (shows suggestion for first one only)
 
-## Learn More
+Empty textbox (no suggestion)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🧰 Tech Stack
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+React.js
 
-### Code Splitting
+JavaScript (ES6+)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+CSS3
 
-### Analyzing the Bundle Size
+🏗️ Project Structure
+XSPELLCHECK-APP/
+ ├─ public/
+ │   └─ index.html
+ ├─ src/
+ │   ├─ App.js
+ │   ├─ index.js
+ │   └─ index.css
+ ├─ package.json
+ └─ README.md
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+⚙️ Installation & Setup
 
-### Making a Progressive Web App
+Clone the repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+git clone <repo-url>
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Install dependencies
 
-### Deployment
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+Run the development server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+npm start
+
+
+Your app will now be running at:
+
+http://localhost:3000
+
+🔧 How It Works
+
+User types into the textarea.
+
+Input is split into words using a punctuation/whitespace regex.
+
+Each word is converted to lowercase.
+
+The app checks if the word exists in the dictionary's keys.
+
+As soon as a match is found →
+Displays:
+
+Did you mean: corrected-word?
+
+
+If no misspelled word exists → no suggestion shown.
+
+🧪 Crio Requirements Covered
+
+✔ Uses textarea
+✔ Suggestion format:
+
+Did you mean: example?
+
+
+✔ First incorrect word only
+✔ Case-insensitive
+✔ Clears suggestion if textbox is empty
+✔ Functional component conversion from class-based component
+✔ UI matches Crio reference layout
+✔ Clean, isolated spell-check logic
+
+📜 License
+
+This project is created as part of the Crio Frontend Buildout Program.
